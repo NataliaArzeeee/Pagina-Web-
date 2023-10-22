@@ -1,53 +1,54 @@
-producto,codigo,descripcion,stock,precio_unitario
-Macarilla de Arroz,1,Mascarillas Karite,100,8
-Macarilla de Miel,2,Mascarillas Karite,100,8
-Macarilla Acido Hialuronico,3,Mascarillas Karite,100,8
-Mascarilla Vitamina E,4,Mascarillas Karite,100,8
-Macarilla Colageno,5,Mascarillas Karite,100,8
-Macarilla Vitamina C,6,Mascarillas Karite,100,8
-Macarilla Baba de caracol,7,Mascarillas Karite,100,8
-Macarilla 4K Oro,8,Mascarillas Karite,100,8
-Mascarilla de Leche,9,Mascarillas Karite,100,8
-Mascarilla Carbon,10,Mascarillas Liquida Peel off,100,8
-Mascarilla Aloe Vera,11,Mascarillas Liquida Peel off,100,8
-Mascarilla Anti-Arrugas,12,Mascarillas Liquida Peel off,100,8
-Mascarilla Mora,13,Mascarillas de tela chovemoar,100,8
-Mascarilla Frambuesa,14,Mascarillas de tela chovemoar,100,8
-Mascarilla Naranja,15,Mascarillas de tela chovemoar,100,8
-Mascarilla Hidrantante,16,Mascarillas Hidratantes,100,5
-Tonico facial de arroz,17,Skin Care,100,30
-Primers ,18,Skin Care,100,15
-Serum de Caviar,19,Skin Care,100,30
-Serum de Colageno,20,Skin Care,100,30
-Jabon de arroz,21,Skin Care,100,15
-Vinchas,22,Accesorio,100,15
-Balsamo de aloe vera,23,Hidrantante de labios,100,7
-Base Fit Me Mc ,24,Maquillaje ,100,20
-Brochas 2 en 1 ,25,Herramienta de Maquillaje ,100,10
-Parches ojeras ,26,Skin Care,100,5
-Parches labios,27,Skin Care,100,5
-Pulpito Limpiador ,28,Skin Care,100,15
-Jabon Cejas,29,Maquillaje ,100,15
-Gel de cejas,30,Maquillaje ,100,15
-Limpiador de Brochas,31,Herramienta de Maquillaje ,100,20
-Perfiladores,32,Herramienta de Maquillaje ,100,12
-Labiales Nude,33,Maquillaje ,100,12
-KIT 1 classic,34,"3 mascarillas a elección,1 mascarilla peel off,1 parche de ojeras,1 parche de labios,1 mascarilla comprimida,1 gel de cejas y pestañas,1 set de 3 perfiladores,1 mascarilla 3 pasos nariz,1 cepillo de cejas",20,55
-KIT 2 classic,35,"3 mascarillas a elección,2 parche de labios,2 parche de ojeras,1 serum a elección,1 set de 3 perfiladores,1 bálsamo labial,1 rimel de cejas y pestañas,1 vincha skincare,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",20,100
-KIT 3 classic,36,"2 mascarillas a elección,1 mascarilla peel off,2 parches de ojeras,1 parche de labios,1 mascarilla comprimida,1 mascarilla 3 pasos nariz,2 mascarillas en gel,2 exfoliantes faciales,1 gel de cejas y pestañas,1 brocha 2 en 1,1 cepillo de cejas",20,75
-KIT 4 classic,37,"2 mascarillas a elección,1 parche de ojeras,1 parche de labios,1 vincha skincare,1 jabón de arroz,1 set de 3 perfiladores,1 serum a elección,1 mascarilla comprimida,1 mascarilla 3 pasos nariz,2 mascarillas en gel,2 exfoliantes faciales,1 gel de cejas y pestañas,1 cepillo de cejas",20,120
-KIT 5 classic,38,"3 mascarillas a elección,1 bálsamo labial,1 parche de labios,2 parches de ojeras,2 mascarillas en gel,1 vincha skincare,1 mascarilla comprimida,1 cepillo de cejas",20,50
-KIT 6 classic,39,"5 mascarillas a elección,2 parches de labios,1 parche de ojeras,1 vincha skincare,1 mascarilla en gel,1 cepillo de cejas",20,55
-KIT 7 classic,40,"4 mascarillas a elección,2 mascarillas exfoliantes,2 parches de ojeras,2 parches de labios,4 mascarillas comprimidas,2 mascarillas nocturnas,1 mascarilla en gel,1 cepillo de cejas",20,75
-KIT 8 classic,41,"3 mascarillas a elección,1 parche de labios,1 parche de ojeras,1 serum a elección,1 set de 3 perfiladores,1 brocha a elección,1 vincha skincare,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",20,80
-KIT 1 economic ,42,"2 mascarillas a elección,1 parche de ojeras,1 parche de labios,1 mascarilla comprimida",15,20
-KIT 2 economic,43,"2 mascarillas a elección,1 jabón de arroz,1 mascarilla exfoliante,2 mascarillas comprimidas",15,35
-KIT 3 economic,44,"5 mascarillas a elección,1 parche de ojeras,1 parche de labios",15,40
-KIT 4 economic ,45,"2 mascarillas a elección,1 brocha 2 en 1,1 parche de labios,1 parche ojeras,1 exfoliante facial,1 mascarilla de arcilla,1 mascarilla nocturna,1 mascarillas comprimida",15,50
-KIT 1 premium ,46,"3 mascarillas a elección,1 vincha skincare,1 parche de labios,1 parche de ojeras,1 gel de cejas y pestañas,1 serum a elección,2 exfoliantes faciales,1 jabon de arroz,1 mascarilla comprimida,1 mascarilla en gel,1 cepillo de cejas",10,100
-KIT 2 premium ,47,"3 mascarillas a elección,3 mascarillas exfoliantes,1 parche de ojera,1 parche de labio,1 parche de labios y ojeras,1 mascarilla comprimida,3 mascarillas nocturnas,1 mascarilla de helado,1 mascarilla en gel,1 cepillo de cejas",10,100
-KIT 3 premium,48,"4 mascarillas a elección,1 parche de labios,2 parches de ojeras,1 serum a elección,1 balsamo labial,1 rimel de cejas y pestañas,1 set de 3 perfiladores,1 set de 5 brochas,1 vincha skincare,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",10,130
-KIT 4 premium,49,"1 kit completo 3 en 1,1 brocha aplicadora 3 en 1,1 set de 3 perfiladores,1 gel de cejas y pestañas,1 mascarilla nocturna,1 vincha skincare,1 pulpito limpiador facial,1 jabón de arroz,1 mascarilla en gel,1 cepillo de cejas",10,120
-KIT 5 premimum ,50,"4 mascarillas a elección,1 parche de labios,2 parches de ojeras,1 serum a elección,1 balsamo labial,1 rimel de cejas y pestañas,1 set de 3 perfiladores,1 set de 5 brochas,1 vincha skincare,1 limpia brochas corazon,1 jabon de arroz,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",10,155
- KIT 6 premium ,51,"5 mascarillas a elección,3 mascarillas exfoliantes,2 parches de ojeras,2 parches de labios,2 mascarillas comprimidas,1 serum a elección,1 set de 3 perfiladores,1 jabon de arroz,1 mascarilla en gel,1 cepillo de cejas",10,110
-KIT 7 premium,52,"8 mascarillas a elección,4 mascarillas exfoliantes,2 parches de ojeras,2 parches de labios,2 mascarillas nocturnas,2 serums huda beauty,2 vinchas skincare,1 mascarilla en gel,1 cepillo de cejas",5,200
+producto,codigo,descripcion,stock,precio_unitario,categoria
+Macarilla de Arroz,1,Mascarillas Karite,100,8,Skincare
+Macarilla de Miel,2,Mascarillas Karite,100,8,Skincare
+Macarilla Acido Hialuronico,3,Mascarillas Karite,100,8,Skincare
+Mascarilla Vitamina E,4,Mascarillas Karite,100,8,Skincare
+Macarilla Colageno,5,Mascarillas Karite,100,8,Skincare
+Macarilla Vitamina C,6,Mascarillas Karite,100,8,Skincare
+Macarilla Baba de caracol,7,Mascarillas Karite,100,8,Skincare
+Macarilla 4K Oro,8,Mascarillas Karite,100,8,Skincare
+Mascarilla de Leche,9,Mascarillas Karite,100,8,Skincare
+Mascarilla Carbon,10,Mascarillas Liquida Peel off,100,8,Skincare
+Mascarilla Aloe Vera,11,Mascarillas Liquida Peel off,100,8,Skincare
+Mascarilla Anti-Arrugas,12,Mascarillas Liquida Peel off,100,8,Skincare
+Mascarilla Mora,13,Mascarillas de tela chovemoar,100,8,Skincare
+Mascarilla Frambuesa,14,Mascarillas de tela chovemoar,100,8,Skincare
+Mascarilla Naranja,15,Mascarillas de tela chovemoar,100,8,Skincare
+Mascarilla Hidrantante,16,Mascarillas Hidratantes,100,5,Skincare
+Tonico facial de arroz,17,Skin Care,100,30,Skincare
+Primers ,18,Skin Care,100,15,Skincare
+Serum de Caviar,19,Skin Care,100,30,Skincare
+Serum de Colageno,20,Skin Care,100,30,Skincare
+Jabon de arroz,21,Skin Care,100,15,Skincare
+Vinchas,22,Accesorio,100,15,Accesorio
+Balsamo de aloe vera,23,Hidrantante de labios,100,7,Skincare
+Base Fit Me Mc ,24,Maquillaje ,100,20,Maquillaje
+Brochas 2 en 1 ,25,Herramienta de Maquillaje ,100,10,Skincare
+Parches ojeras ,26,Skin Care,100,5,Skincare
+Parches labios,27,Skin Care,100,5,Skincare
+Pulpito Limpiador ,28,Skin Care,100,15,Skincare
+Jabon Cejas,29,Maquillaje ,100,15,Skincare
+Gel de cejas,30,Maquillaje ,100,15,Skincare
+Limpiador de Brochas,31,Herramienta de Maquillaje ,100,20,Skincare
+Perfiladores,32,Herramienta de Maquillaje ,100,12,Skincare
+Labiales Nude,33,Maquillaje ,100,12,Skincare
+KIT 1 classic,34,"3 mascarillas a elección,1 mascarilla peel off,1 parche de ojeras,1 parche de labios,1 mascarilla comprimida,1 gel de cejas y pestañas,1 set de 3 perfiladores,1 mascarilla 3 pasos nariz,1 cepillo de cejas",20,55,Kit
+KIT 2 classic,35,"3 mascarillas a elección,2 parche de labios,2 parche de ojeras,1 serum a elección,1 set de 3 perfiladores,1 bálsamo labial,1 rimel de cejas y pestañas,1 vincha skincare,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",20,100,Kit
+KIT 3 classic,36,"2 mascarillas a elección,1 mascarilla peel off,2 parches de ojeras,1 parche de labios,1 mascarilla comprimida,1 mascarilla 3 pasos nariz,2 mascarillas en gel,2 exfoliantes faciales,1 gel de cejas y pestañas,1 brocha 2 en 1,1 cepillo de cejas",20,75,Kit
+KIT 4 classic,37,"2 mascarillas a elección,1 parche de ojeras,1 parche de labios,1 vincha skincare,1 jabón de arroz,1 set de 3 perfiladores,1 serum a elección,1 mascarilla comprimida,1 mascarilla 3 pasos nariz,2 mascarillas en gel,2 exfoliantes faciales,1 gel de cejas y pestañas,1 cepillo de cejas",20,120,Kit
+KIT 5 classic,38,"3 mascarillas a elección,1 bálsamo labial,1 parche de labios,2 parches de ojeras,2 mascarillas en gel,1 vincha skincare,1 mascarilla comprimida,1 cepillo de cejas",20,50,Kit
+KIT 6 classic,39,"5 mascarillas a elección,2 parches de labios,1 parche de ojeras,1 vincha skincare,1 mascarilla en gel,1 cepillo de cejas",20,55,Kit
+KIT 7 classic,40,"4 mascarillas a elección,2 mascarillas exfoliantes,2 parches de ojeras,2 parches de labios,4 mascarillas comprimidas,2 mascarillas nocturnas,1 mascarilla en gel,1 cepillo de cejas",20,75,Kit
+KIT 8 classic,41,"3 mascarillas a elección,1 parche de labios,1 parche de ojeras,1 serum a elección,1 set de 3 perfiladores,1 brocha a elección,1 vincha skincare,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",20,80,Kit
+KIT 1 economic ,42,"2 mascarillas a elección,1 parche de ojeras,1 parche de labios,1 mascarilla comprimida",15,20,Kit
+KIT 2 economic,43,"2 mascarillas a elección,1 jabón de arroz,1 mascarilla exfoliante,2 mascarillas comprimidas",15,35,Kit
+KIT 3 economic,44,"5 mascarillas a elección,1 parche de ojeras,1 parche de labios",15,40,Kit
+KIT 4 economic ,45,"2 mascarillas a elección,1 brocha 2 en 1,1 parche de labios,1 parche ojeras,1 exfoliante facial,1 mascarilla de arcilla,1 mascarilla nocturna,1 mascarillas comprimida",15,50,Kit
+KIT 1 premium ,46,"3 mascarillas a elección,1 vincha skincare,1 parche de labios,1 parche de ojeras,1 gel de cejas y pestañas,1 serum a elección,2 exfoliantes faciales,1 jabon de arroz,1 mascarilla comprimida,1 mascarilla en gel,1 cepillo de cejas",10,100,Kit
+KIT 2 premium ,47,"3 mascarillas a elección,3 mascarillas exfoliantes,1 parche de ojera,1 parche de labio,1 parche de labios y ojeras,1 mascarilla comprimida,3 mascarillas nocturnas,1 mascarilla de helado,1 mascarilla en gel,1 cepillo de cejas",10,100,Kit
+KIT 3 premium,48,"4 mascarillas a elección,1 parche de labios,2 parches de ojeras,1 serum a elección,1 balsamo labial,1 rimel de cejas y pestañas,1 set de 3 perfiladores,1 set de 5 brochas,1 vincha skincare,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",10,130,Kit
+KIT 4 premium,49,"1 kit completo 3 en 1,1 brocha aplicadora 3 en 1,1 set de 3 perfiladores,1 gel de cejas y pestañas,1 mascarilla nocturna,1 vincha skincare,1 pulpito limpiador facial,1 jabón de arroz,1 mascarilla en gel,1 cepillo de cejas",10,120,Kit
+KIT 5 premimum ,50,"4 mascarillas a elección,1 parche de labios,2 parches de ojeras,1 serum a elección,1 balsamo labial,1 rimel de cejas y pestañas,1 set de 3 perfiladores,1 set de 5 brochas,1 vincha skincare,1 limpia brochas corazon,1 jabon de arroz,1 mascarillas en gel,1 mascarilla comprimida,1 cepillo de cejas",10,155,Kit
+ KIT 6 premium ,51,"5 mascarillas a elección,3 mascarillas exfoliantes,2 parches de ojeras,2 parches de labios,2 mascarillas comprimidas,1 serum a elección,1 set de 3 perfiladores,1 jabon de arroz,1 mascarilla en gel,1 cepillo de cejas",10,110,Kit
+KIT 7 premium,52,"8 mascarillas a elección,4 mascarillas exfoliantes,2 parches de ojeras,2 parches de labios,2 mascarillas nocturnas,2 serums huda beauty,2 vinchas skincare,1 mascarilla en gel,1 cepillo de cejas",5,200,Kit
+

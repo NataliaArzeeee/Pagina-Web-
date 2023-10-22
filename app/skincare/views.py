@@ -7,7 +7,7 @@ import csv
 from django.shortcuts import render
 
 def lista_de_productos(request):
-    archivo_csv = 'C:\\Users\\hp\\Documents\\app\\skincare\\listaproductos.csv'
+    archivo_csv = 'C:\\Users\\Alejandro\\Documents\\app\\skincare\\listaproductos.csv'
 
     # Lee los datos del archivo CSV con codificación UTF-8 y cambia el delimitador de ';' a ','.
     productos = []
