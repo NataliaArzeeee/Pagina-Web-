@@ -22,3 +22,15 @@ def lista_de_productos(request):
 def consejos(request):
     return render(request, 'skincare/consejos.html')
 
+def inicio_sesion(request):
+    return render(request, 'skincare/inicio_sesion.html')
+
+def crear_cuenta(request):
+    return render(request, 'skincare/crear_cuenta.html')
+
+def carrito_compra(request):
+    return render(request, 'skincare/carrito_compra.html')
+
+def compra_exitosa(request):
+    return render(request, 'skincare/compra_exitosa.html')
+

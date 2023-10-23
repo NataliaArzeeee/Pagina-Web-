@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-name {
+            flex: 1;
+        }
+
+        .delete-button {
+            background-color: #FF0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .buy-all-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+        <ul>
+            <!-- Producto 1 -->
+            <li>
+                <span class="product-name">Producto 1</span>
+                <button class="delete-button">Eliminar</button>
+            </li>
+
+            <!-- Producto 2 -->
+            <li>
+                <span class="product-name">Producto 2</span>
+                <button class="delete-button">Eliminar</button>
+            </li>
+
+            <!-- Producto 3 -->
+            <li>
+                <span class="product-name">Producto 3</span>
+                <button class="delete-button">Eliminar</button>
+            </li>
+        </ul>
+
+        <!-- Botón "Comprar Todo" con redirección a /compra_exitosa -->
+        <a href="/compra_exitosa" class="buy-all-button">Comprar Todo</a>
+    </div>
+</body>
+</html>

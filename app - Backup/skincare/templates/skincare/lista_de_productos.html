@@ -22,7 +22,7 @@
                         <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
                         <p><strong>Stock:</strong> {{ producto.stock }}</p>
                         <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
-                        <button onclick="abrirWhatsApp('{{ producto.producto }}')">Comprar</button>
+                        <button onclick="abrirWhatsApp('{{ producto.producto }}')">Añadir al carrito</button>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -39,7 +39,7 @@
                 <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
                 <p><strong>Stock:</strong> {{ producto.stock }}</p>
                 <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
-                <button onclick="abrirWhatsApp('{{ producto.producto }}')">Comprar</button>
+                <button onclick="abrirWhatsApp('{{ producto.producto }}')">Añadir al carrito</button>
             </div>
             {% endif %}
             {% endfor %}

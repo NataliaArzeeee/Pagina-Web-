@@ -11,11 +11,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/backgrounds.css' %}">
 
+    <style>
+        .login-button {
+            position: absolute;
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            left: 10px; /* Mover el botón de inicio de sesión a la izquierda */
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px; /* Ajusta el relleno para reducir el tamaño */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px; /* Ajusta el tamaño de fuente */
+        }
+
+        .cart-button {
+            position: absolute;
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            right: 10px; /* Mover el botón del carrito de compra a la derecha */
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px; /* Ajusta el relleno para reducir el tamaño */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px; /* Ajusta el tamaño de fuente */
+        }
+
+            .login-button:hover, .cart-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
 </head>
 <body>
+    <a href="/login" class="login-button">Iniciar Sesión</a>
+    <a href="/carrito_compra" class="cart-button">Carrito de Compra</a>
+
     <header>
         <h1 style="font-size: 48px;">D Beauty</h1>
-            <h2 style="font-size: 18px;">Bienvenido a la Tienda de Cosméticos y Skincare</h2>
+        <h2 style="font-size: 18px;">Bienvenido a la Tienda de Cosméticos y Skincare</h2>
     </header>
 
     <nav>
@@ -33,7 +67,7 @@
                 <div class="novedades-image">
 
                 </div>
-                <div class="novedades-content">
+                <div class "novedades-content">
                     <h2>Novedades</h2>
                     <p>Descubre nuestra nueva colección de productos</p>
                     <a href="/productos" class="btn-novedades">Productos</a>
@@ -68,7 +102,6 @@
                 window.location.href = 'https://bit.ly/dbeautylinks';
             });
         </script>
-
     </main>
 
     <footer>
@@ -82,6 +115,5 @@
             window.location.href = urlWhatsApp;
         }
     </script>
-
 </body>
 </html>
