@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Productos</h1>
+    </header>
+
+    <main>
+        <h2>Productos de Skincare</h2>
+        <div class="productos-container-grid productos-skincare">
+            {% for producto in productos %}
+                {% if producto.categoria == "Skincare" %}
+                    <div class="producto-card">
+                        <img src="{{ producto.imagen }}" alt="{{ producto.producto }}">
+                        <h3>{{ producto.producto }}</h3>
+                        <p><strong>Código:</strong> {{ producto.codigo }}</p>
+                        <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+                        <p><strong>Stock:</strong> {{ producto.stock }}</p>
+                        <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
+                        <button onclick="abrirWhatsApp('{{ producto.producto }}')">Comprar</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    
+        <h2>Kits Disponibles</h2>
+        <div class="productos-container-grid productos-kit">
+            {% for producto in productos %}
+            {% if producto.categoria == "Kit" %}
+            <div class="producto-card">
+                <img src="{{ producto.imagen }}" alt="{{ producto.producto }}">
+                <h3>{{ producto.producto }}</h3>
+                <p><strong>Código:</strong> {{ producto.codigo }}</p>
+                <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+                <p><strong>Stock:</strong> {{ producto.stock }}</p>
+                <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
+                <button onclick="abrirWhatsApp('{{ producto.producto }}')">Comprar</button>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2023 Tienda de Cosméticos y Skincare</p>
+    </footer>
+
+    <script>
+        function abrirWhatsApp(producto) {
+            var numero = 67422888;
+            var mensaje = '¡Hola! Me gustaría comprar el producto ' + producto;
+            var urlWhatsApp = 'https://api.whatsapp.com/send?phone=' + numero + '&text=' + encodeURIComponent(mensaje);
+            window.location.href = urlWhatsApp;
+        }
+    </script>    
+
+</body>
+</html>
