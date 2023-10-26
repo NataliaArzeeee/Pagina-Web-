@@ -62,11 +62,21 @@
 <body>
     <div class="container">
         <h1>Iniciar Sesión</h1>
-        <form action="tu_script_de_validacion.php" method="post">
+        
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
             <input type="text" name="usuario" placeholder="Usuario" required>
             <input type="password" name="contrasena" placeholder="Contraseña" required>
             <input type="submit" value="Iniciar Sesión">
         </form>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
         <a href="/crear_cuenta" class="create-account-button">Crear cuenta</a>
     </div>
 </body>

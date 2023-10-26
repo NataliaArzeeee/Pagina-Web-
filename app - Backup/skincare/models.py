@@ -11,3 +11,12 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.producto
+
+class db_usuario(models.Model):
+    codigoUsuario = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=45)
+    gmail = models.CharField(max_length=45, unique=True)
+    contrasena = models.CharField(max_length=45)
+
+    def __str__(self):
+        return self.nombre

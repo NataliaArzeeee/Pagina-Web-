@@ -44,7 +44,14 @@
     </style>
 </head>
 <body>
-    <a href="/login" class="login-button">Iniciar Sesión</a>
+
+    {% if user.is_authenticated %}
+        <!-- Aquí coloca el contenido que deseas mostrar si el usuario ha iniciado sesión -->
+        <p>Bienvenido, {{ user.username }}. <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></p>
+    {% else %}
+        <a href="/login" class="login-button">Iniciar Sesión</a>
+    {% endif %}
+    
     <a href="/carrito_compra" class="cart-button">Carrito de Compra</a>
 
     <header>

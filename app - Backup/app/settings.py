@@ -72,16 +72,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbdbeauty',  # Nombre del esquema
-        'USER': 'NANCYGARCESH',
-        'PASSWORD': 'Nancy123',
+        'NAME': 'sys',  # Nombre del esquema
+        'USER': 'Alejandro',
+        'PASSWORD': 'Pass1234',
         'HOST': '127.0.0.1',  # O la ubicación de tu servidor MySQL
         'PORT': '3306',  # Puerto de MySQL
     }
