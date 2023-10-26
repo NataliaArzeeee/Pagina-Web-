@@ -70,6 +70,21 @@ TEMPLATES = [
     },
 ]
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
+
 WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
@@ -78,9 +93,9 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sys',  # Nombre del esquema
-        'USER': 'Alejandro',
-        'PASSWORD': 'Pass1234',
+        'NAME': 'dbdbeauty',  # Nombre del esquema
+        'USER': 'NANCYGARCESH',
+        'PASSWORD': 'Nancy123',
         'HOST': '127.0.0.1',  # O la ubicación de tu servidor MySQL
         'PORT': '3306',  # Puerto de MySQL
     }
@@ -132,19 +147,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'root': {
-        'handlers': ['console'],
-        'level': 'DEBUG',
-    },
-}
+
 
 

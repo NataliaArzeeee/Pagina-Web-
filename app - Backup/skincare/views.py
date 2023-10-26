@@ -10,6 +10,8 @@ import logging
 from django.db import connection
 from django.db import OperationalError
 from django.db import connections, OperationalError
+from .models import Usuario 
+from django.contrib import messages
 
 def lista_de_productos(request):
     try:
@@ -35,7 +37,6 @@ def consejos(request):
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import db_usuario  # Asegúrate de importar tu modelo de usuario
 from django.db import transaction
 
 @transaction.atomic
@@ -49,12 +50,12 @@ def crear_cuenta(request):
         if User.objects.filter(username=nombre_usuario).exists():
             messages.error(request, 'El nombre de usuario que ingresó ya está registrado.')
             print("Nombre ya registrado")  
-        elif db_usuario.objects.filter(gmail=gmail).exists():
+        elif Usuario.objects.filter(gmail=gmail).exists():
             messages.error(request, 'El correo que ingresó ya está registrado.')
             print("Correo ya registrado")
         else:
             # Crear un nuevo usuario en la base de datos
-            user = db_usuario(nombre=nombre_usuario, gmail=gmail, contrasena=contrasena)
+            user = Usuario(nombre=nombre_usuario, gmail=gmail, contrasena=contrasena)
             user.save()
             print("Usuario registrado correctamente")
             messages.success(request, 'Registro exitoso. Ahora puedes iniciar sesión.')
@@ -65,22 +66,45 @@ def crear_cuenta(request):
     return render(request, 'skincare/crear_cuenta.html')
 
 from django.contrib.auth import authenticate, login
+ # Asegúrate de importar tu modelo de usuario
+
+
+import logging
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from .models import Usuario
+
+from django.contrib.auth.hashers import check_password
+
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from .models import Usuario
+
+from django.db import connection
+from django.db import OperationalError
+from django.contrib import messages
 
 def inicio_sesion(request):
     if request.method == 'POST':
         usuario = request.POST['usuario']
         contrasena = request.POST['contrasena']
 
-        user = authenticate(request, username=usuario, password=contrasena)
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM skincare_usuario WHERE nombre = %s AND contrasena = %s", [usuario, contrasena])
+                user = cursor.fetchone()
 
-        if user is not None:
-            login(request, user)
-            print("Sesion iniciada correctamente")
-            return redirect('inicio')
-        else:
-            messages.error(request, 'Credenciales incorrectas. Inténtalo de nuevo.')
-            print("No se pude iniciar sesion")
+            if user is not None:
+                # Autenticación exitosa, puedes realizar otras acciones aquí si es necesario
+                return redirect('inicio')
+            else:
+                messages.error(request, 'Credenciales incorrectas. Inténtalo de nuevo.')
+        except OperationalError as e:
+            print("Error en la consulta SQL:", str(e))
+            messages.error(request, 'Ocurrió un error al intentar iniciar sesión.')
+
     return render(request, 'skincare/inicio_sesion.html')
+
 
 def carrito_compra(request):
     return render(request, 'skincare/carrito_compra.html')
