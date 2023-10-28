@@ -84,6 +84,9 @@ from django.db import connection
 from django.db import OperationalError
 from django.contrib import messages
 
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
 def inicio_sesion(request):
     if request.method == 'POST':
         usuario = request.POST['usuario']
@@ -95,13 +98,22 @@ def inicio_sesion(request):
                 user = cursor.fetchone()
 
             if user is not None:
-                # Autenticación exitosa, puedes realizar otras acciones aquí si es necesario
-                return redirect('inicio')
+                # Autenticación exitosa, establece manualmente al usuario como autenticado
+                request.session['nombre'] = user[1]  # Accede al segundo elemento de la tupla para obtener el nombre de usuario
+                print(user[1])
+                # Agregar el nombre del usuario al contexto
+                context = {
+                    'nombre_usuario': user[1]  # Accede al segundo elemento de la tupla para obtener el nombre de usuario
+                }
+
+                # Ahora, puedes acceder a 'nombre_usuario' en tu archivo HTML
+                return render(request, 'skincare/inicio.html', context)
             else:
                 messages.error(request, 'Credenciales incorrectas. Inténtalo de nuevo.')
         except OperationalError as e:
             print("Error en la consulta SQL:", str(e))
             messages.error(request, 'Ocurrió un error al intentar iniciar sesión.')
+
 
     return render(request, 'skincare/inicio_sesion.html')
 

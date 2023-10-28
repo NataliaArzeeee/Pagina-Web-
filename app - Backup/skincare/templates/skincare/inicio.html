@@ -1,3 +1,5 @@
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -45,13 +47,14 @@
 </head>
 <body>
 
-    {% if user.is_authenticated %}
-        <!-- Aquí coloca el contenido que deseas mostrar si el usuario ha iniciado sesión -->
-        <p>Bienvenido, {{ user.username }}. <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></p>
+    {% if nombre_usuario %}
+    <!-- Aquí coloca el contenido que deseas mostrar si el usuario ha iniciado sesión -->
+    <p>Bienvenido, {{ nombre_usuario }}. <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></p>
     {% else %}
-        <a href="/login" class="login-button">Iniciar Sesión</a>
+    <a href="/login" class="login-button">Iniciar Sesión</a>
     {% endif %}
-    
+
+
     <a href="/carrito_compra" class="cart-button">Carrito de Compra</a>
 
     <header>
