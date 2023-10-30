@@ -13,7 +13,6 @@ class Producto(models.Model):
     def __str__(self):
         return self.producto
 
-
 class Usuario(AbstractUser):
     codigoUsuario = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=45)
@@ -27,3 +26,7 @@ class Usuario(AbstractUser):
     def __str__(self):
         return self.nombre
 
+class Venta(models.Model):
+    codigoVenta = models.AutoField(primary_key=True)
+    fecha = models.DateField()
+    idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)

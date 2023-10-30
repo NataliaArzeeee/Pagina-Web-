@@ -53,30 +53,31 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Carrito de Compras</h1>
-        <ul>
-            <!-- Producto 1 -->
-            <li>
-                <span class="product-name">Producto 1</span>
-                <button class="delete-button">Eliminar</button>
-            </li>
 
-            <!-- Producto 2 -->
-            <li>
-                <span class="product-name">Producto 2</span>
-                <button class="delete-button">Eliminar</button>
-            </li>
+   <h1>Carrito de Compras</h1>
 
-            <!-- Producto 3 -->
-            <li>
-                <span class="product-name">Producto 3</span>
-                <button class="delete-button">Eliminar</button>
-            </li>
-        </ul>
+    <ul>
+        {% for detalle in detalles_carrito %}
+        <li>{{ detalle.producto }} - Precio: Bs {{ detalle.precio_unitario }}</li>
+        {% endfor %}
+    </ul>
 
-        <!-- Botón "Comprar Todo" con redirección a /compra_exitosa -->
-        <a href="/compra_exitosa" class="buy-all-button">Comprar Todo</a>
-    </div>
+    <a href="{% url 'inicio' %}">Volver al Inicio</a>
+
+    <script>
+       // Obtén la lista del carrito de la URL
+        var params = new URLSearchParams(window.location.search);
+        var carrito = params.get('carrito');
+        if (carrito) {
+            // Decodifica la lista del carrito (si es necesario) y realiza operaciones con ella
+            // Por ejemplo, convierte la cadena de la lista del carrito a un array de JavaScript
+            var productosEnCarrito = JSON.parse(decodeURIComponent(carrito));
+            // Realiza operaciones con los productos en el carrito
+            console.log(productosEnCarrito);
+            //
+        }
+    </script>
+
 </body>
 </html>
+
