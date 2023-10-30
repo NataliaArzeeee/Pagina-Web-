@@ -45,10 +45,11 @@
 </head>
 <body>
 
-    {% if request.session.user_id %}
-        <p>Bienvenido, {{ request.session.user_name }}. <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></p>
+    {% if nombre_usuario %}
+    <!-- Aquí coloca el contenido que deseas mostrar si el usuario ha iniciado sesión -->
+    <p>Bienvenido, {{ nombre_usuario }}. <a href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></p>
     {% else %}
-        <a href="/login" class="login-button">Iniciar Sesión</a>
+    <a href="/login" class="login-button">Iniciar Sesión</a>
     {% endif %}
 
     <header>

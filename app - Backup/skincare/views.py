@@ -97,17 +97,25 @@ def inicio_sesion(request):
                 user = cursor.fetchone()
 
             if user is not None:
-                # Autenticación exitosa, puedes realizar otras acciones aquí si es necesario
-                request.session['user_id'] = user[10]  # Almacena el ID del usuario en la sesión
-                request.session['user_name'] = user[11]  # Almacena el nombre de usuario en la sesión
-                return redirect('inicio')
+                # Autenticación exitosa, establece manualmente al usuario como autenticado
+                request.session['nombre'] = user[11]  # Accede al segundo elemento de la tupla para obtener el nombre de usuario
+                print(user[11])
+                # Agregar el nombre del usuario al contexto
+                context = {
+                    'nombre_usuario': user[11]  # Accede al segundo elemento de la tupla para obtener el nombre de usuario
+                }
+
+                # Ahora, puedes acceder a 'nombre_usuario' en tu archivo HTML
+                return render(request, 'skincare/inicio.html', context)
             else:
                 messages.error(request, 'Credenciales incorrectas. Inténtalo de nuevo.')
         except OperationalError as e:
             print("Error en la consulta SQL:", str(e))
             messages.error(request, 'Ocurrió un error al intentar iniciar sesión.')
 
+
     return render(request, 'skincare/inicio_sesion.html')
+
 
 def compra_exitosa(request):
     return render(request, 'skincare/compra_exitosa.html')
