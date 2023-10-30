@@ -98,8 +98,8 @@ def inicio_sesion(request):
 
             if user is not None:
                 # Autenticación exitosa, puedes realizar otras acciones aquí si es necesario
-                request.session['user_id'] = user[0]  # Almacena el ID del usuario en la sesión
-                request.session['user_name'] = user[1]  # Almacena el nombre de usuario en la sesión
+                request.session['user_id'] = user[10]  # Almacena el ID del usuario en la sesión
+                request.session['user_name'] = user[11]  # Almacena el nombre de usuario en la sesión
                 return redirect('inicio')
             else:
                 messages.error(request, 'Credenciales incorrectas. Inténtalo de nuevo.')
