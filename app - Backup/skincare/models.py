@@ -29,4 +29,10 @@ class Usuario(AbstractUser):
 class Venta(models.Model):
     codigoVenta = models.AutoField(primary_key=True)
     fecha = models.DateField()
+    costoTotal = models.IntegerField()
+
+class DetalleVenta(models.Model):
+    codigoDetalle = models.AutoField(primary_key=True)
+    fecha = models.DateField()
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    codVenta = models.ForeignKey(Venta, on_delete=models.CASCADE)

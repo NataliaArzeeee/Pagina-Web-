@@ -233,3 +233,44 @@ def carrito(request):
             pass  # Manejar productos que ya no existen
 
     return render(request, 'skincare/carrito.html', {'productos_en_carrito': productos_en_carrito, 'total_carrito': total_carrito})
+
+from django.shortcuts import render, redirect
+from .models import Producto, Venta, DetalleVenta
+from datetime import date
+
+def comprar_todo(request):
+    if request.method == 'POST':
+        # Obtén los productos en el carrito desde la sesión
+        carrito = request.session.get('carrito', [])
+
+        # Crea una instancia de Venta
+        venta = Venta.objects.create(
+            fecha=date.today(),
+            costoTotal=0  # Debes calcular el costo total
+        )
+
+        # Itera sobre los productos en el carrito
+        for producto_id in carrito:
+            try:
+                producto = Producto.objects.get(id=producto_id)
+
+                # Crea una instancia de DetalleVenta asociada a la Venta y al Producto
+                DetalleVenta.objects.create(
+                    fecha=date.today(),
+                    idProducto=producto,
+                    codVenta=venta
+                )
+
+                # Resta el stock del producto
+                producto.stock -= 1
+                producto.save()
+
+            except Producto.DoesNotExist:
+                pass  # Manejar productos que ya no existen
+
+        # Elimina los productos del carrito si es necesario
+        request.session['carrito'] = []
+
+        return redirect('compra_exitosa')  # Redirige a la página de catálogo u otra página
+
+

@@ -4,6 +4,38 @@
 <head>
     <title>Lista de Productos</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <style>
+        .login-button {
+            position: absolute;
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            left: 10px; /* Mover el botón de inicio de sesión a la izquierda */
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px; /* Ajusta el relleno para reducir el tamaño */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px; /* Ajusta el tamaño de fuente */
+        }
+
+        .cart-button {
+            position: absolute;
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            right: 10px; /* Mover el botón del carrito de compra a la derecha */
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px; /* Ajusta el relleno para reducir el tamaño */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px; /* Ajusta el tamaño de fuente */
+        }
+
+            .login-button:hover, .cart-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
 </head>
 <body>
     

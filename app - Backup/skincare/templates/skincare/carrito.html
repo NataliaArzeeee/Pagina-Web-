@@ -63,22 +63,22 @@
                 <li>
                     <span class="product-name">Nombre del Producto</span>
                     <span>Precio Unitario</span>
-                    <span>Cantidad</span>
-                    <span>Precio Total</span>
                 </li>
                 {% for producto in productos_en_carrito %}
                 <li>
-                    <span class="product-name">{{ producto.nombre }}</span>
+                    <span class="product-name">{{ producto.producto }}</span>
+                    <span>{{ producto.precio_unitario }}</span>
                     <span>{{ producto.precio }}</span>
-                    <span>1</span>  <!-- Ajusta la cantidad según tu lógica de carrito -->
-                    <span>{{ producto.precio }}</span>
-                    <button class="delete-button">Eliminar</button>
                 </li>
                 {% endfor %}
             </ul>
 
             <p>Total del Carrito: {{ total_carrito }}</p>  <!-- Muestra el total del carrito -->
-            <a class="buy-all-button" href="{% url 'realizar_compra' %}">Realizar Compra</a>  <!-- Enlaza a la vista para realizar la compra -->
+            <form method="post" action="{% url 'comprar_todo' %}">
+                {% csrf_token %}
+                <button type="submit" class="buy-all-button">Comprar Todo</button>
+            </form>
+              <!-- Enlaza a la vista para realizar la compra -->
         {% else %}
             <p>El carrito está vacío.</p>
         {% endif %}
