@@ -6,9 +6,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+    
     <header>
         <h1>Catálogo de Productos</h1>
     </header>
+
+    <a href="/carrito" class="cart-button">Carrito de Compra</a>
 
     <main>
         <h2>Productos de Skincare</h2>
@@ -23,12 +26,12 @@
                 <p><strong>Stock:</strong> {{ producto.stock }}</p>
                 <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
 
-                <!-- Agregar el botón de compra dentro de un formulario -->
-                <form method="POST" action="/comprar-producto">
+                <!-- Agregar el botón "Añadir al carrito" dentro de un formulario -->
+                <form method="POST" action="{% url 'agregar_al_carrito' producto.codigo %}">
                     {% csrf_token %}
-                    <input type="hidden" name="productId" value="{{ producto.codigo }}">
-                    <button type="submit">Comprar producto</button>
+                    <button type="submit" data-product-id="{{ producto.codigo }}">Añadir al carrito</button>
                 </form>
+
             </div>
             {% endif %}
             {% endfor %}
@@ -46,12 +49,12 @@
                 <p><strong>Stock:</strong> {{ producto.stock }}</p>
                 <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
 
-                <!-- Agregar el botón de compra dentro de un formulario -->
-                <form method="POST" action="/comprar-producto">
+                <!-- Agregar el botón "Añadir al carrito" dentro de un formulario -->
+                <form method="POST" action="{% url 'agregar_al_carrito' producto.codigo %}">
                     {% csrf_token %}
-                    <input type="hidden" name="productId" value="{{ producto.codigo }}">
-                    <button type="submit">Comprar producto</button>
+                    <button type="submit" data-product-id="{{ producto.codigo }}">Añadir al carrito</button>
                 </form>
+
             </div>
             {% endif %}
             {% endfor %}

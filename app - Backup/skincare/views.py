@@ -97,25 +97,17 @@ def inicio_sesion(request):
                 user = cursor.fetchone()
 
             if user is not None:
-                # Autenticación exitosa, establece manualmente al usuario como autenticado
-                request.session['nombre'] = user[11]  # Accede al segundo elemento de la tupla para obtener el nombre de usuario
-                print(user[11])
-                # Agregar el nombre del usuario al contexto
-                context = {
-                    'nombre_usuario': user[11]  # Accede al segundo elemento de la tupla para obtener el nombre de usuario
-                }
-
-                # Ahora, puedes acceder a 'nombre_usuario' en tu archivo HTML
-                return render(request, 'skincare/inicio.html', context)
+                # Autenticación exitosa, puedes realizar otras acciones aquí si es necesario
+                request.session['user_id'] = user[10]  # Almacena el ID del usuario en la sesión
+                request.session['user_name'] = user[11]  # Almacena el nombre de usuario en la sesión
+                return redirect('inicio')
             else:
                 messages.error(request, 'Credenciales incorrectas. Inténtalo de nuevo.')
         except OperationalError as e:
             print("Error en la consulta SQL:", str(e))
             messages.error(request, 'Ocurrió un error al intentar iniciar sesión.')
 
-
     return render(request, 'skincare/inicio_sesion.html')
-
 
 def compra_exitosa(request):
     return render(request, 'skincare/compra_exitosa.html')
@@ -199,3 +191,45 @@ def comprar_producto(request):
             return JsonResponse({'success': False, 'message': 'Producto no encontrado.'})
     return JsonResponse({'success': False, 'message': 'Solicitud no válida.'})
 
+from django.contrib.sessions.models import Session
+
+def agregar_al_carrito(request, producto_codigo):
+    producto = get_object_or_404(Producto, codigo=producto_codigo)
+
+    # Obtener la lista de IDs de productos del carrito del usuario desde la sesión
+    carrito = request.session.get('carrito', [])
+    
+    # Agregar el ID del producto a la lista
+    carrito.append(producto.id)
+    
+    # Guardar la lista de IDs actualizada en la sesión del usuario
+    request.session['carrito'] = carrito
+    
+    return redirect('lista_de_productos')
+
+from django.contrib.sessions.models import Session
+from django.shortcuts import render
+from .models import Producto
+from django.shortcuts import render
+from .models import Producto
+
+def carrito(request):
+    # Obtener los productos en el carrito del usuario a partir de la sesión
+    carrito = request.session.get('carrito', [])
+    
+    # Inicializar una lista vacía para almacenar los productos en el carrito
+    productos_en_carrito = []
+
+    # Calcular el total del carrito
+    total_carrito = 0
+
+    # Recorrer la lista de IDs de productos en el carrito
+    for producto_id in carrito:
+        try:
+            producto = Producto.objects.get(id=producto_id)
+            productos_en_carrito.append(producto)
+            total_carrito += producto.precio_unitario  # Asumiendo que "precio" es un campo en tu modelo de Producto
+        except Producto.DoesNotExist:
+            pass  # Manejar productos que ya no existen
+
+    return render(request, 'carrito.html', {'productos_en_carrito': productos_en_carrito, 'total_carrito': total_carrito})

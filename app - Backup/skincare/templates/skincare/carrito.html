@@ -1,0 +1,88 @@
+﻿'{% extends "base.html" %}'
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-name {
+            flex: 1;
+        }
+
+        .delete-button {
+            background-color: #FF0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .buy-all-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tu Carrito de Compras</h1>
+
+        {% if productos_en_carrito %}
+            <ul>
+                <li>
+                    <span class="product-name">Nombre del Producto</span>
+                    <span>Precio Unitario</span>
+                    <span>Cantidad</span>
+                    <span>Precio Total</span>
+                </li>
+                {% for producto in productos_en_carrito %}
+                <li>
+                    <span class="product-name">{{ producto.nombre }}</span>
+                    <span>{{ producto.precio }}</span>
+                    <span>1</span>  <!-- Ajusta la cantidad según tu lógica de carrito -->
+                    <span>{{ producto.precio }}</span>
+                    <button class="delete-button">Eliminar</button>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <p>Total del Carrito: {{ total_carrito }}</p>  <!-- Muestra el total del carrito -->
+            <a class="buy-all-button" href="{% url 'realizar_compra' %}">Realizar Compra</a>  <!-- Enlaza a la vista para realizar la compra -->
+        {% else %}
+            <p>El carrito está vacío.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

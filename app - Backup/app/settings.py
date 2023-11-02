@@ -57,7 +57,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'skincare/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,8 +94,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbdbeauty',  # Nombre del esquema
-        'USER': 'NANCYGARCESH',
-        'PASSWORD': 'Nancy123',
+        'USER': 'Alejandro',
+        'PASSWORD': 'Pass1234',
         'HOST': '127.0.0.1',  # O la ubicación de tu servidor MySQL
         'PORT': '3306',  # Puerto de MySQL
     }
