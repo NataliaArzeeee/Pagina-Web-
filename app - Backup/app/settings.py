@@ -94,8 +94,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbdbeauty',  # Nombre del esquema
-        'USER': 'Alejandro',
-        'PASSWORD': 'Pass1234',
+        'USER': 'NANCYGARCESH',
+        'PASSWORD': 'Nancy123',
         'HOST': '127.0.0.1',  # O la ubicación de tu servidor MySQL
         'PORT': '3306',  # Puerto de MySQL
     }

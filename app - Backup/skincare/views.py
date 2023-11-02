@@ -232,4 +232,4 @@ def carrito(request):
         except Producto.DoesNotExist:
             pass  # Manejar productos que ya no existen
 
-    return render(request, 'carrito.html', {'productos_en_carrito': productos_en_carrito, 'total_carrito': total_carrito})
+    return render(request, 'skincare/carrito.html', {'productos_en_carrito': productos_en_carrito, 'total_carrito': total_carrito})
