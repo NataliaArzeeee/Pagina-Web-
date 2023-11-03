@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <style>
+        .login-button {
+            position: absolute;
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            left: 10px; /* Mover el botón de inicio de sesión a la izquierda */
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px; /* Ajusta el relleno para reducir el tamaño */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px; /* Ajusta el tamaño de fuente */
+        }
+
+        .cart-button {
+            position: absolute;
+            top: 10px; /* Ajusta la distancia desde la parte superior */
+            right: 10px; /* Mover el botón del carrito de compra a la derecha */
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px; /* Ajusta el relleno para reducir el tamaño */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px; /* Ajusta el tamaño de fuente */
+        }
+
+            .login-button:hover, .cart-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Catálogo de Productos</h1>
+    </header>
+
+    <a href="/carrito" class="cart-button">Carrito de Compra</a>
+
+    <main>
+        <h2>Productos de Skincare</h2>
+        <div class="productos-container-grid productos-skincare">
+            {% for producto in productos %}
+            {% if producto.categoria == "Skincare" %}
+            <div class="producto-card">
+                <img src="{{ producto.imagen }}" alt="{{ producto.producto }}">
+                <h3>{{ producto.producto }}</h3>
+                <p><strong>Código:</strong> {{ producto.codigo }}</p>
+                <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+                <p><strong>Stock:</strong> {{ producto.stock }}</p>
+                <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
+
+                <!-- Agregar el botón "Añadir al carrito" dentro de un formulario -->
+                <form method="POST" action="{% url 'agregar_al_carrito' producto.codigo %}">
+                    {% csrf_token %}
+                    <button type="submit" data-product-id="{{ producto.codigo }}">Añadir al carrito</button>
+                </form>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <h2>Kits Disponibles</h2>
+        <div class="productos-container-grid productos-kit">
+            {% for producto in productos %}
+            {% if producto.categoria == "Kit" %}
+            <div class="producto-card">
+                <img src="{{ producto.imagen }}" alt="{{ producto.producto }}">
+                <h3>{{ producto.producto }}</h3>
+                <p><strong>Código:</strong> {{ producto.codigo }}</p>
+                <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+                <p><strong>Stock:</strong> {{ producto.stock }}</p>
+                <p><strong>Precio Unitario Bs:</strong> {{ producto.precio_unitario }}</p>
+
+                <!-- Agregar el botón "Añadir al carrito" dentro de un formulario -->
+                <form method="POST" action="{% url 'agregar_al_carrito' producto.codigo %}">
+                    {% csrf_token %}
+                    <button type="submit" data-product-id="{{ producto.codigo }}">Añadir al carrito</button>
+                </form>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </main>
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="{% csrf_token %}"> <!-- Agregar el token CSRF aquí -->
+
+    <footer>
+        <p>&copy; 2023 Tienda de Cosméticos y Skincare</p>
+    </footer>
+
+    <script>
+        function abrirWhatsApp(producto) {
+            var numero = 67422888;
+            var mensaje = '¡Hola! Me gustaría comprar el producto ' + producto;
+            var urlWhatsApp = 'https://api.whatsapp.com/send?phone=' + numero + '&text=' + encodeURIComponent(mensaje);
+            window.location.href = urlWhatsApp;
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const botonesCompra = document.querySelectorAll('.comprar-producto');
+        
+        botonesCompra.forEach(function(boton) {
+            boton.addEventListener('click', function() {
+                const productId = boton.getAttribute('data-product-id');
+                
+                // Obtener el token CSRF del HTML
+                const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+                
+                // Enviar una solicitud al servidor para insertar datos en la base de datos
+                fetch('/comprar-producto', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken,  // Incluir el token CSRF en el encabezado
+                    },
+                    body: JSON.stringify({ productId }),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Procesar la respuesta del servidor
+                        alert('Producto comprado con éxito.');
+                    } else {
+                        alert('Error al comprar el producto.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    });
+
+    </script>
+
+</body>
+</html>

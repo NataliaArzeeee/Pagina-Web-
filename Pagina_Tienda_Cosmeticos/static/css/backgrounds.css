@@ -1,0 +1,31 @@
+/* Agrega una imagen de fondo a la sección novedades */
+.novedades {
+    background-color: #FFDBE7;
+    /*background-image: url('/static/images/fondo_novedades.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh;*/
+}
+
+/* Agrega una imagen de fondo a la sección destacados */
+.destacados {
+    background-color: #ADD8E6;
+    /*background-image: url('/static/images/fondo_destacados.jpg');
+    background-size: contain; /* Ajusta la imagen al ancho del navegador sin distorsionar la proporción 
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh; /* Establece la altura igual al alto del viewport */
+}
+
+
+/* Agrega una imagen de fondo a la sección skincare-magic */
+.skincare-magic {
+    background-color: #FFDBE7;
+    /*background-image: url('/static/images/fondo_skincare.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh;*/
+}
+

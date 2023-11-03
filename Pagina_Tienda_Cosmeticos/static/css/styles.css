@@ -1,0 +1,281 @@
+/* Estilos para el encabezado */
+header {
+    background-color: #ADD8E6;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Aplicar la fuente Poppins a toda la página */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* También puedes especificar la fuente para elementos específicos, como h1, h2, p, etc. */
+h1, h2, p {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #333;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.destacados, .novedades {
+    margin-bottom: 20px; /* Agrega espacio entre los títulos y los productos */
+}
+
+.productos-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Permite el desplazamiento horizontal si hay más productos que caben en la pantalla */
+}
+
+.producto {
+    flex: 0 0 calc(30% - 20px); /* Controla el ancho de cada producto */
+    margin: 10px;
+    text-align: center;
+    border: 1px solid white; /* Agrega un borde alrededor de cada producto */
+    padding: 10px;
+}
+
+
+/* Estilos para los botones */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2580b3;
+}
+
+.destacados {
+    max-width: 100%; /* Establece un ancho máximo para el contenedor */
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+}
+
+.productos-lista {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.productos-lista th, .productos-lista td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: center;
+}
+
+.productos-lista th {
+    background-color: #0074E4;
+    color: white;
+}
+
+.productos-lista tr:nth-child(even) {
+    background-color: white;
+}
+
+.productos-skincare, .productos-kit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Alinear las columnas */
+}
+
+.productos-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Muestra 3 columnas en la cuadrícula */
+    gap: 20px; /* Espacio entre los productos */
+    margin-top: 20px; /* Espacio en la parte superior */
+    justify-content: space-between; /* Alinea los productos en la última fila */
+}
+
+.producto-card {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para los botones */
+.producto-card button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.producto-card button:hover {
+    background-color: #2580b3;
+}
+
+/* Estilo para la sección de Novedades */
+.novedades {
+    background-image: url('/static/images/imagen2.jpg'); /* Ruta de la imagen de fondo */
+    background-size: auto 300%; /* La imagen se ajustará al tamaño de la sección */
+    background-repeat: no-repeat;
+    background-position: center; /* Centra la imagen */
+    padding: 40px; /* Espaciado interno */
+}
+
+
+/* Contenedor para alinear la imagen y el contenido */
+.novedades-container {
+    display: flex; /* Utiliza un diseño flexible para alinear los elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+/* Estilo para la imagen de Novedades */
+.novedades-image {
+    flex: 1; /* Ocupa la mitad izquierda del contenedor */
+}
+
+/* Estilo para el contenido de Novedades */
+.novedades-content {
+    flex: 1; /* Ocupa la mitad derecha del contenedor */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f0f0f0; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilo para el botón "Productos" */
+.btn-novedades {
+    background-color: #52BBD2; /* Color de fondo celeste claro */
+    color: white; /* Color de texto blanco */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado en el texto del botón */
+    display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.destacados {
+    background-color: white; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.productos-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.producto-imagen img {
+    width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.producto-texto {
+    background-color: white;
+    padding: 20px;
+}
+
+.btn-ver-kits {
+    background-color: #52BBD2; /* Color del botón */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-ver-kits:hover {
+    background-color: #3A92A3; /* Cambiar color al pasar el mouse */
+}
+
+/* Clase para agrandar la imagen */
+.ampliar-imagen {
+    width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    max-width: 100%; /* Evita que la imagen sea más grande que su tamaño original */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.ampliar-imagen2 {
+    width: 80%; /* La imagen se ajustará al ancho del contenedor */
+    max-width: 80%; /* Evita que la imagen sea más grande que su tamaño original */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+/* Estilo para la sección skincare-magic */
+.skincare-magic {
+    background-color: #FFDBE7;
+    text-align: center; /* Centra el contenido horizontalmente */
+    padding: 40px 0; /* Agrega espaciado alrededor del contenido */
+}
+
+/* Estilo para el contenedor de productos */
+.productos-container {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    align-items: center; /* Centra los elementos en el centro horizontal y verticalmente */
+}
+
+/* Estilo para el título */
+.skincare-magic h2 {
+    margin-bottom: 20px; /* Agrega espacio debajo del título */
+}
+
+/* Estilo para el contenedor de texto e imagen */
+.skincare-text {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    align-items: center; /* Centra los elementos en el centro horizontal y verticalmente */
+    margin-top: 20px; /* Agrega espacio en la parte superior */
+}
+
+/* Estilo para la imagen */
+.skincare-text img {
+    width: 200%; /* Aumenta el tamaño de la imagen al 200% */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    margin-bottom: 20px; /* Agrega espacio debajo de la imagen */
+}
+
+/* Estilo para el mensaje */
+.skincare-text p {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 20px; /* Agrega espacio debajo del mensaje */
+}
+
+/* Estilo para el botón "Conoce más" */
+.btn-conoce-mas {
+    background-color: #52BBD2; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    text-decoration: none; /* Sin subrayado en el texto del botón */
+    font-weight: bold;
+    border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.btn-conoce-mas:hover {
+    background-color: #3A92A3; /* Cambia el color al pasar el mouse */
+}
