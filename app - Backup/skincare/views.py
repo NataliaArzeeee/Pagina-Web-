@@ -243,10 +243,13 @@ def comprar_todo(request):
         # Obtén los productos en el carrito desde la sesión
         carrito = request.session.get('carrito', [])
 
+        # Inicializa el costo total en cero
+        costo_total = 0
+
         # Crea una instancia de Venta
         venta = Venta.objects.create(
             fecha=date.today(),
-            costoTotal=0  # Debes calcular el costo total
+            costoTotal=0  # El costo total se inicializa en cero
         )
 
         # Itera sobre los productos en el carrito
@@ -265,12 +268,17 @@ def comprar_todo(request):
                 producto.stock -= 1
                 producto.save()
 
+                # Agrega el precio del producto al costo total
+                costo_total += producto.precio_unitario
+
             except Producto.DoesNotExist:
                 pass  # Manejar productos que ya no existen
+
+        # Actualiza el costo total en la instancia de Venta
+        venta.costoTotal = costo_total
+        venta.save()
 
         # Elimina los productos del carrito si es necesario
         request.session['carrito'] = []
 
         return redirect('compra_exitosa')  # Redirige a la página de catálogo u otra página
-
-
